@@ -1,0 +1,24 @@
+@(products: List[Product])
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Products</title>
+</head>
+<body>
+<form method="get">
+    <input type="text" name="searchCriteria">
+    <input type="submit" value="Search">
+</form>
+<table>
+<th>Product Name</th><th>Unit Price</th>
+@for(product <- products){
+<tr>
+    <td><a href="product/@product.getProductId">@product.getProductName</a></td>
+    <td><a href="product/@product.getProductId">@product.getUnitPrice</a></td>
+</tr>
+}
+</table>
+
+</body>
+</html>
